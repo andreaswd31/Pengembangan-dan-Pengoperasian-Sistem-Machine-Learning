@@ -1,0 +1,18 @@
+# Abaikan folder output TFX yang besar (karena kita cuma butuh serving_model_dir)
+output/
+andreaswd31-dicoding_pipeline_project2/
+
+# Abaikan file cache Python
+__pycache__/
+*.pyc
+
+# Abaikan folder virtual environment (jika ada)
+venv/
+env/
+.env
+
+# Abaikan file notebook checkpoints
+.ipynb_checkpoints/
+
+# Abaikan database metadata (opsional, tapi sebaiknya diignore agar bersih)
+*.sqlite
