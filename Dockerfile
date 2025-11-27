@@ -1,11 +1,11 @@
-# Versi Ringan untuk Railway
 FROM tensorflow/serving:latest
 
-# Copy model saja (Tanpa config monitoring)
-COPY ./serving_model_dir /models/churn-model
+# --- PERBAIKAN PATH ---
+# Kita copy ISI dari folder timestamp spesifik ke folder versi "1" di dalam container
+# GANTI '1764035919' dengan angka timestamp yang ada di folder serving_model_dir Anda!
+COPY ./serving_model_dir/andreaswd31-dicoding_pipeline_project2/1764035919 /models/churn-model/1
 
-# Set nama model
 ENV MODEL_NAME=churn-model
 
-# Expose port (Penting buat Railway)
+# Penting untuk Railway
 EXPOSE 8501
