@@ -1,11 +1,10 @@
 FROM tensorflow/serving:latest
 
-# --- PERBAIKAN PATH ---
-# Kita copy ISI dari folder timestamp spesifik ke folder versi "1" di dalam container
-# GANTI '1764035919' dengan angka timestamp yang ada di folder serving_model_dir Anda!
-COPY ./serving_model_dir/andreaswd31-dicoding_pipeline_project2/1764035919 /models/churn-model/1
+# --- PERBAIKAN PATH (SESUAI GAMBAR GITHUB) ---
+# Kita copy ISI folder timestamp (1764208728) ke folder versi "1" di dalam container
+COPY ./serving_model_dir/1764208728 /models/churn-model/1
 
 ENV MODEL_NAME=churn-model
 
-# Penting untuk Railway
+# Expose port untuk API
 EXPOSE 8501
